@@ -1,0 +1,15 @@
+1. Generate points
+bash./rand_points 70 > points.txt
+2. Generate Euclidean FSTs
+bash./efst < points.txt > fsts.txt
+3. Solve with branch-and-cut
+bash./bb < fsts.txt > solution.ps
+4. Create complete PostScript file
+bashcat prelude.ps solution.ps > complete.ps
+5. Convert to PDF
+bashps2pdf complete.ps result.pdf
+
+
+
+ # Generate, process, and create PDF in one pipeline
+(cat prelude.ps; ./rand_points 70 | ./efst | ./bb) | ps2pdf - esmt70.pdf

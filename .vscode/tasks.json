@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build GeoSteiner",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-Wall",
+        "-g",
+
+        // You can include or exclude files based on need
+        "analyze.c", "bb.c", "bmst.c", "btsearch.c", "callback.c",
+        "cra.c", "ctype.c", "ddsuf.c", "dt.c", "egmp.c", "emst.c",
+        "environment.c", "fatal.c", "flow.c", "fpdebug.c", "fptools.c",
+        "fst.c", "fst2graph.c", "genps.c", "heap.c", "hgmp.c", "hypergraph.c",
+        "io.c", "ledamain.c", "logic.c", "machine.c", "memory.c", "metric.c",
+        "mst.c", "osmt.c", "point.c", "polltime.c", "prunefst.c", "rfst.c",
+        "rmst.c", "sec_comp.c", "sec2.c", "smt.c", "solver.c", "steiner.c",
+        "triangle.c", "ub.c", "ufst.c", "utils.c", "weak.c",
+
+        "-o",
+        "geosteiner.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
